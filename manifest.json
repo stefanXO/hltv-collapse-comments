@@ -4,6 +4,14 @@
   "short_name": "HLTV.org Collapse Comments",
   "version": "1.0.0",
   "description": "You can now collapse threaded comments.",
+  "content_scripts": [
+    {
+      "matches": ["https://*.hltv.org/*","http://*.hltv.org/*"], 
+      "css": ["css/style.css"],
+      "run_at": "document_start",
+      "js": ["js/jquery.js", "js/localforage.min.js", "js/hltv.js"]
+    }
+  ],
   "permissions": [ "https://*.hltv.org/*", "http://*.hltv.org/*", "storage" ],
 	"icons": {
 		"128": "images/hltv.png"

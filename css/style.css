@@ -1,0 +1,16 @@
+.show-comment {
+	opacity: 1;
+}
+
+.hide-comment {
+	opacity: 0.5;
+}
+.hide-comment .forum-middle {
+	display: none !important;
+}
+.hide-comment .forum-bottombar {
+	display: none !important;
+}
+.thread-collapse {
+	cursor: pointer;
+}
