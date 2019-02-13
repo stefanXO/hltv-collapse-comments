@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "HLTV.org Collapse Comments",
+  "short_name": "HLTV.org Collapse Comments",
+  "version": "1.0.0",
+  "description": "You can now collapse threaded comments.",
+  "permissions": [ "https://*.hltv.org/*", "http://*.hltv.org/*", "storage" ],
+	"icons": {
+		"128": "images/hltv.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"128": "images/hltv.png"
+		},
+    "default_title": "HLTV.org Collapse Comments"
+	}
+}
