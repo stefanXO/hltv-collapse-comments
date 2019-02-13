@@ -1,0 +1,6 @@
+v.1.0.0 
+
+* Initial release
+* Collapse comment threads on click
+* Remember collapsed comments across page loads
+* Clean up memory after 2 weeks
