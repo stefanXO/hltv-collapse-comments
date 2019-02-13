@@ -63,6 +63,21 @@ $(function() {
 		console.log(err);
 	});
 
+	function cleanup() {
+		var days14ago = new Date(new Date().getTime() - (14 * 24 * 60 * 60 * 1000)).valueOf();
+		localforage.iterate(function(value, key, iterationNumber) {
+			if(value < days14ago) {
+				localforage.removeItem(key);
+			}
+		}).then(function() {
+			console.log('hltv collapse cleanup has completed');
+		}).catch(function(err) {
+			// This code runs if there were any errors
+			console.log(err);
+		});
+	}
+
+	setTimeout(cleanup, 30000);
 
 });
 
