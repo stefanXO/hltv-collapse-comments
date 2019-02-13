@@ -32,6 +32,12 @@ $(function() {
 		$(el).find('.thread-collapse.open').html('[+]&nbsp;');
 		$(el).find('.thread-collapse.closed').html('[-]&nbsp;');
 		$(el).find('.thread-collapse').toggleClass('closed').toggleClass('open');
+		if($(el).hasClass('show-comment')) {
+			localforage.removeItem(id);
+		}
+		if($(el).hasClass('hide-comment')) {
+			localforage.setItem(id, (new Date().getTime()));
+		}
 	}
 
 	$('<span class="thread-collapse open">[-]&nbsp;</span>').insertBefore('.replyNum');
@@ -44,6 +50,18 @@ $(function() {
 		postIds.push($(postItems[i]).attr('id'));
 	}
 	// console.log(postIds);
+
+	localforage.keys().then(function(keys) {
+		// console.log(keys);
+		for(var i=0;i<postIds.length;i++) {
+			if(keys.includes(postIds[i])) {
+				toggleComment($('#'+postIds[i]));
+			}
+		}
+	}).catch(function(err) {
+		// This code runs if there were any errors
+		console.log(err);
+	});
 
 
 });
